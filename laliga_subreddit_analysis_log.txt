@@ -1,0 +1,369 @@
+================================================================================
+
+SUBREDDIT ANALYSIS: r/LaLiga (old.reddit.com/r/LaLiga)
+
+================================================================================
+
+
+
+--------------------------------------------------------------------------------
+
+PART 1: LOG OF POSTS & COMMENTS (35 VERBATIM EXCERPTS)
+
+--------------------------------------------------------------------------------
+
+
+
+1. Excerpt: "ESPN+ now has rights to La Liga in the US for like $8/mo. Edit: It has been a little iffy with my US VPN though (works on my PC but not Amazon Fire TV with"
+
+   Type: Comment (Logistics / Query Response)
+
+   What Stood Out: Practical advice containing empirical pricing info ($8/mo) and direct personal VPN troubleshooting details.
+
+
+
+2. Excerpt: "well that's frustrating....."
+
+   Type: Comment (Reaction)
+
+   What Stood Out: Single-burst emotional comment functioning purely as a short reaction with no factual premise or argument.
+
+
+
+3. Excerpt: "TSN"
+
+   Type: Comment (Informational Response)
+
+   What Stood Out: Single-word answer to a broadcasting query.
+
+
+
+4. Excerpt: "But tsn doesnt show on tv. You gotta catch it live oine cause there is no on demand."
+
+   Type: Comment (Technical Clarification)
+
+   What Stood Out: Informal internet register featuring a typo ("oine") while explaining specific streaming availability constraints.
+
+
+
+5. Excerpt: "Yep, ESPN+… Bein Sports lost the bid. Bein had the contract but was not able to achieve a clause in the contract that had to do with la liga brand exposure"
+
+   Type: Comment (Historical/Administrative)
+
+   What Stood Out: Multi-sentence explanation invoking official contractual clauses to answer a broadcast query.
+
+
+
+6. Excerpt: "How to watch LaLiga TV in the US?"
+
+   Type: Post Title (Inquiry Prompt)
+
+   What Stood Out: Clear functional prompt seeking logistical information rather than asserting an opinion.
+
+
+
+7. Excerpt: "I believe it's on ESPN+ in the USA - that's what it says on La Liga's website ."
+
+   Type: Comment (Informational Answer)
+
+   What Stood Out: Evidentiary backing citing an official third-party source ("La Liga's website").
+
+
+
+8. Excerpt: "Thank you. I actually would like to watch “ LaLiga TV ” not just LaLiga games. I have ESPN+ but the coverage is not the same."
+
+   Type: Comment (Clarification)
+
+   What Stood Out: Multi-sentence courteous response detailing a specific difference between broadcast options.
+
+
+
+9. Excerpt: "I don't blame you. ESPN doesn't give a damn about soccer it seems."
+
+   Type: Comment (Platform Critique)
+
+   What Stood Out: Unbacked subjective sentiment using informal phrasing ("doesn't give a damn").
+
+
+
+10. Excerpt: "El Día Después on Youtube has decades of their old and current Match shows. My favourite sections are Lo que el ojo no ve and Los sonidos."
+
+    Type: Comment (Media Recommendation)
+
+    What Stood Out: Recommendation citing specific Spanish-language segment titles as concrete evidence.
+
+
+
+11. Excerpt: "When Tebas brought the spending & salary cap to ensure 'fair competition', Barca and RM agitated and ran a false agenda that Tebas is destroying the league."
+
+    Type: Post Title (Opinion / Stance)
+
+    What Stood Out: Argumentative statement asserting a specific premise about league financial management.
+
+
+
+12. Excerpt: "Now the Premier League is doing the same to stop ManCity's dominance. Tebas started it earlier & in the long run, LaLiga will reap benefits."
+
+    Type: Comment (Comparative Analysis)
+
+    What Stood Out: Multi-sentence take drawing parallels between La Liga and Premier League financial regulations.
+
+
+
+13. Excerpt: "2024/25 La Liga Ticket & Travel Information Thread"
+
+    Type: Post Title (Megathread / Operational)
+
+    What Stood Out: Purely functional, non-opinionated post serving as a navigational megathread.
+
+
+
+14. Excerpt: "Club Websites: The most reliable source is directly through the club's official website."
+
+    Type: Comment (Guide / Advice)
+
+    What Stood Out: Expository writing formatted as formal advice for navigating ticket purchases.
+
+
+
+15. Excerpt: "Match Thread: Real Madrid vs Sevilla | La Liga | 18 Oct 19:00 UTC"
+
+    Type: Post Title (Automated Bot Post)
+
+    What Stood Out: Structured, highly templated bot title containing match metadata.
+
+
+
+16. Excerpt: "Deportivo La Coruña Win. 4 votes. 80%"
+
+    Type: Comment (Poll Result Output)
+
+    What Stood Out: Structured quantitative metric from a community match thread poll.
+
+
+
+17. Excerpt: "Questions about the vibe of La Liga (from an ultra-casual)"
+
+    Type: Post Title (Discussion Prompt)
+
+    What Stood Out: Interactive prompt in which the user explicit labels their expertise level ("ultra-casual").
+
+
+
+18. Excerpt: "The el clasicos pretty much decide who wins the league so to some extent they do feel like tune ups but not a 100 percent imo."
+
+    Type: Comment (Subjective Take)
+
+    What Stood Out: Unbacked assertion hedged with internet shorthand ("imo").
+
+
+
+19. Excerpt: "Watching La Liga doesn't feel that dominant as one would think, last season for example, Barça dominated Madrid almost all of the games, but struggled more playing against Atletico"
+
+    Type: Comment (Tactical Observation)
+
+    What Stood Out: Multi-sentence narrative argument supported by specific match records from prior seasons.
+
+
+
+20. Excerpt: "Religiously watched la liga for quite some time, same with pl, bundesliga and serie a. Lemme just say, La Liga is by far the most technical league of all."
+
+    Type: Comment (Comparative Opinion)
+
+    What Stood Out: Extreme superlative ("most technical league of all") using colloquial language ("Lemme").
+
+
+
+21. Excerpt: "La Liga is way too competitive (in the mid-low end of the table)"
+
+    Type: Post Title (Discussion Stance)
+
+    What Stood Out: Stance-driven observation evaluating parity across lower-tier teams.
+
+
+
+22. Excerpt: "Real Oviedo and Espanyol refused to play for the first 30 seconds to protest Villarreal vs. Barcelona being held in Miami."
+
+    Type: Post Title (News Submission)
+
+    What Stood Out: Fact-based headline reporting a specific sporting and political event.
+
+
+
+23. Excerpt: "[Opta] Spanish La Liga 2026-27 — How much time has each team spent in each game state?"
+
+    Type: Post Title (Data / Statistical Infographic)
+
+    What Stood Out: Data-centric headline explicitly citing standard football stat providers ([Opta]).
+
+
+
+24. Excerpt: "What counts as a post-foul 'Advantage' in La Liga nowadays."
+
+    Type: Post Title (Rules Query)
+
+    What Stood Out: Interactive prompt asking for community feedback on refereeing interpretations.
+
+
+
+25. Excerpt: "[Pol Ballús] Barcelona register all four summer signings with La Liga : How did they do it ?"
+
+    Type: Post Title (Journalism / Analysis)
+
+    What Stood Out: Citation of a journalist's name ([Pol Ballús]) paired with a curiosity prompt.
+
+
+
+26. Excerpt: "The big issue no one is addressing - LaLigas lack of competition."
+
+    Type: Post Title (Debate Prompt)
+
+    What Stood Out: Controversial assertion framed to start a discussion thread.
+
+
+
+27. Excerpt: "Why can't La Liga imply a rule like this ?"
+
+    Type: Post Title (Regulatory Question)
+
+    What Stood Out: Interactive question prompt reacting to external league rules.
+
+
+
+28. Excerpt: "Homegrown players in each La Liga club."
+
+    Type: Post Title (Informational / Descriptive)
+
+    What Stood Out: Concise, neutral title introducing demographic squad metrics.
+
+
+
+29. Excerpt: "Where to watch La Liga."
+
+    Type: Post Title (Logistical Query)
+
+    What Stood Out: Short, repeated 4-word question prompt.
+
+
+
+30. Excerpt: "Made a free analytics site for Liga MX."
+
+    Type: Post Title (User Content Promotion)
+
+    What Stood Out: Statement announcing a third-party analytical project.
+
+
+
+31. Excerpt: "This is the last season for the historic Mestella cause it will get demolished. They will move into a Stadium so large that only perhaps 7-8 clubs have bigger stadium then them in Europe."
+
+    Type: Comment (Stadium / Infrastructure)
+
+    What Stood Out: Specific factual claims about European stadium sizes mixed with informal spelling ("Mestella").
+
+
+
+32. Excerpt: "Call me crazy but Valencia will be forced to react on the January window because if they get relegated, there will be riots in Valencia.."
+
+    Type: Comment (Speculative / Emotion)
+
+    What Stood Out: Hyperbolic rhetorical prediction ("riots in Valencia") without empirical statistical backing.
+
+
+
+33. Excerpt: "Barcelona is a really young team and they are getting better season after season. Cubarsí is 19, Lamine is 19, Pedri 22 and Fermín is 23."
+
+    Type: Comment (Demographic Evidence)
+
+    What Stood Out: Direct use of empirical numerical evidence (exact ages) to support a qualitative claim.
+
+
+
+34. Excerpt: "I think most of the Spanish sides would just be happy if you could not shit the bed like Villareal last year, and bring home some coefficient to help secure that extra UCL spot."
+
+    Type: Comment (Coefficient / UEFA Focus)
+
+    What Stood Out: Internet slang ("shit the bed") combined with understanding of UEFA coefficient calculations.
+
+
+
+35. Excerpt: "I'd be happy if we finish top 24 & go to knockout playoff round. That's far for Betis. Never got out of group phase."
+
+    Type: Comment (Historical Fact / Expectation)
+
+    What Stood Out: Citation of historical team limits ("Never got out of group phase") to justify personal expectations.
+
+
+
+
+
+--------------------------------------------------------------------------------
+
+PART 2: SINGLE-POST DISTINCTIONS FOR TEXT CLASSIFICATION
+
+--------------------------------------------------------------------------------
+
+
+
+1. Empirical Support vs. Naked Assertion
+
+   - Definition: Does the standalone post back its claim with checkable facts/stats, 
+
+     or does it make an unbacked value judgment?
+
+   - Categories: [Empirical_Backing] vs. [Unbacked_Assertion]
+
+   - Standalone Test:
+
+     * Excerpt #33 cites exact player ages to back a claim -> [Empirical_Backing]
+
+     * Excerpt #20 states a league is "most technical" with no data -> [Unbacked_Assertion]
+
+
+
+2. Lexical Register & Reddit Colloquialism
+
+   - Definition: Does the single post contain platform/internet slang, missing casing/punctuation, 
+
+     or informal jargon, or is it formatted standardly?
+
+   - Categories: [Casual_Slang] vs. [Formal_Standard]
+
+   - Standalone Test:
+
+     * Excerpt #18 ("imo", uncapitalized start) -> [Casual_Slang]
+
+     * Excerpt #14 ("The most reliable source is directly through the club's official website.") -> [Formal_Standard]
+
+
+
+3. Functional Intent: Interactive Prompt vs. Standalone Stance
+
+   - Definition: Is the post constructed to ask a question/solicit responses, or to state 
+
+     an opinion/fact payload?
+
+   - Categories: [Interactive_Prompt] vs. [Standalone_Stance]
+
+   - Standalone Test:
+
+     * Excerpt #6 ("How to watch LaLiga TV in the US?") -> [Interactive_Prompt]
+
+     * Excerpt #11 ("When Tebas brought the spending...") -> [Standalone_Stance]
+
+
+
+4. Syntactic Length: Single-Burst Reaction vs. Multi-Sentence Argument
+
+   - Definition: Is the text a short single-clause reaction, or a structured multi-sentence 
+
+     argument with premises?
+
+   - Categories: [Single_Burst] vs. [Multi_Sentence]
+
+   - Standalone Test:
+
+     * Excerpt #2 ("well that's frustrating.....") -> [Single_Burst]
+
+     * Excerpt #31 (Covers Mestalla demolition, European stadium capacity, and transfer windows) -> [Multi_Sentence]
+
+================================================================================

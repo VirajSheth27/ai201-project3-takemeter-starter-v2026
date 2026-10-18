@@ -1,3 +1,5 @@
-text,label,note
-Paste one post here. Keep the whole post — don't trim it to fit.,your_label_here,cold
-Another post.,your_label_here,"pre-labelled, checked"
+id,author,post_type,verbatim_text,label
+1,Boring-child,comment,"He's a phenomenal player, but I'd hardly call him underrated being in Barcelona's starting eleven...",ASSERTION_REACTION
+2,erenshingeki85,comment,"Most underrated player in the world right now, period.",ASSERTION_REACTION
+3,AMC0102,comment,"He completes 14 passes in the final third per 90, which clears Bellingham statistically...",EVIDENCED_CLAIM
+4,bold013hades,submission_title,"Can someone bring me up to date on Rayo Vallecano?",INQUIRY
