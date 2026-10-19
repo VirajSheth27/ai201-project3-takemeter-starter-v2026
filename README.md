@@ -48,39 +48,52 @@
 
 ## Label Taxonomy
 
-<!-- Each label: a one-sentence definition and two real examples from your
-     reading. Then your decision rule for the hardest boundary.
+Posts are labelled by checking these in order and stopping at the first match:
 
-     The decision rule is worth a point on its own and it's the thing most
-     people leave out. Every taxonomy has a hardest boundary. Name yours. -->
+1. Does the post genuinely ask the community for information, advice, or open opinions, rather than asserting the author's own conclusion? → `inquiry`
+2. Does the post back its claim with an explicit, checkable figure that directly supports it? → `evidenced_claim`
+3. Everything else → `assertion_reaction`
 
-### `label_one`
+Excluded from the dataset: bot posts, news-link titles with no user commentary, and bare score posts. If a user adds their own commentary to a link, only their text is labelled.
 
-**Definition:**
+### `inquiry`
 
-**Example 1:**
->
-
-**Example 2:**
->
-
-### `label_two`
-
-**Definition:**
+**Definition:** An open question seeking information, advice, or the community's opinions, without asserting the author's own answer. Rhetorical questions where the author expresses a pre-baked conclusion (e.g., *"Isn't it obvious...?"*, *"How is nobody talking about him??"*) fail Step 1 and skip to Step 2 or Step 3 based on whether they contain explicit supporting stats or unbacked assertions.
 
 **Example 1:**
->
+Can someone bring me up to date on Rayo Vallecano?
 
 **Example 2:**
->
+Who's been the best keeper in La Liga this season outside Courtois? Genuinely curious.
+
+### `evidenced_claim`
+
+**Definition:** A claim backed by at least one explicit figure (a stat value, fee, age, league position, or contract term) that directly supports it; naming a match, team, or stat category without a value is context, not evidence.
+
+**Example 1:**
+Villarreal sold 3 starters this summer for over €40m total and they are still 5th in the table.
+
+**Example 2:**
+Girona scored 85 goals last season in La Liga, which was second only to Real Madrid.
+
+### `assertion_reaction`
+
+**Definition:** An opinion, judgment, hot take, or reaction that offers no checkable support.
+
+**Example 1:**
+Most underrated player in the world right now, period.
+
+**Example 2:**
+Watched the Getafe game on Sunday. Their midfield is the worst in the league, not even close.
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `evidenced_claim` and `assertion_reaction`
 
-**The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
+**Borderline post:**
+He clears Bellingham statistically but no one talks about him and people won't shut up about Bellingham.
+
+**The decision rule I used every time:** A post is `evidenced_claim` only if it states the figure itself. Saying the stats are good ("clears him statistically", "xG through the roof") without giving a value is `assertion_reaction`. Additionally, an explicit number that serves merely as background metadata (such as a player's age in *"Lamine is 17 and already has more assists than half the wingers"*) does not count as evidence unless the figure directly quantifies the primary statistical claim.
 
 
 

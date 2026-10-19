@@ -1,5 +1,36 @@
 id,author,post_type,verbatim_text,label
-1,Boring-child,comment,"He's a phenomenal player, but I'd hardly call him underrated being in Barcelona's starting eleven...",ASSERTION_REACTION
-2,erenshingeki85,comment,"Most underrated player in the world right now, period.",ASSERTION_REACTION
-3,AMC0102,comment,"He completes 14 passes in the final third per 90, which clears Bellingham statistically...",EVIDENCED_CLAIM
-4,bold013hades,submission_title,"Can someone bring me up to date on Rayo Vallecano?",INQUIRY
+1,Boring-child,comment,"He's a phenomenal player, but I'd hardly call him underrated being in Barcelona's starting eleven and only missing out on the World Cup due to injury.",assertion_reaction
+2,erenshingeki85,comment,"Most underrated player in the world right now, period.",assertion_reaction
+3,AMC0102,comment,"He completes 14 passes in the final third per 90, which clears Bellingham statistically.",evidenced_claim
+4,bold013hades,submission_title,"Can someone bring me up to date on Rayo Vallecano?",inquiry
+5,FootballFanatic_99,comment,"Is Real Betis the most entertaining team outside the Big Three?",assertion_reaction
+6,LaLigaWatcher,submission_title,"Does anyone know if the 1:1 financial rule still applies in the winter window?",inquiry
+7,TacticalAnalyst,comment,"Villarreal sold 3 starters this summer for over €40m total and they are still 5th in the table.",evidenced_claim
+8,SevillaFan_21,comment,"Watched the Getafe game on Sunday. Their midfield is the worst in the league, not even close.",assertion_reaction
+9,StatsGuy_ESP,comment,"Remiro has kept 9 clean sheets already, how is nobody talking about him for the Spain squad??",evidenced_claim
+10,Madridista_99,comment,"bro his xG is through the roof lmao",assertion_reaction
+11,AtletiPure,comment,"Who's been the best keeper in La Liga this season outside Courtois? Genuinely curious.",inquiry
+12,BarcaYouth,comment,"Lamine is 17 and already has more assists than half the wingers in this league.",assertion_reaction
+13,CeltaVigo_88,submission_title,"Isn't it obvious at this point that Tebas cares more about CVC money than local fans?",assertion_reaction
+14,GironaMagic,comment,"Girona scored 85 goals last season in La Liga, which was second only to Real Madrid.",evidenced_claim
+15,BasqueFootballer,submission_title,"How do international fans buy tickets for the Basque derby at San Mames?",inquiry
+16,MallorcaUltra,comment,"Muriqui has scored 6 of Mallorca's last 8 goals across all competitions.",evidenced_claim
+17,ValenciaTruth,comment,"Peter Lim has drained this club dry for 10 years, worst owner in European football.",assertion_reaction
+18,BetisBanter,comment,"Isco still has the best touch in the league, nobody comes close to his control.",assertion_reaction
+19,TacticsBorja,comment,"Real Sociedad completed 520 passes with 88% accuracy against Athletic last night.",evidenced_claim
+20,Sociedad1909,submission_title,"Where can I watch La Liga matches in Canada with Spanish commentary?",inquiry
+21,GranadaSupporter,comment,"We conceded 79 goals in 38 games last season, absolutely hopeless defense.",evidenced_claim
+22,Rayista_00,comment,"Falcao at Vallecas was pure magic even if his knees were completely shot.",assertion_reaction
+23,Espanyol1900,submission_title,"Is there a fantasy La Liga league for this subreddit?",inquiry
+24,LaLigaEng,comment,"Athletic Club's academy has produced 18 players currently active in La Liga top flight.",evidenced_claim
+25,OsasunaPower,comment,"El Sadar is easily the most intimidating stadium for visiting teams outside Bernabeu.",assertion_reaction
+26,AlavesFan,comment,"Samu Omorodion was bought for €6m and sold for over €30m within a year.",evidenced_claim
+27,CadizYellow,comment,"Tebas is ruining spanish football day by day with these ridiculous kickoff times.",assertion_reaction
+28,LasPalmasPass,comment,"Kirian Rodriguez completed 2,240 passes last season, leading all La Liga midfielders.",evidenced_claim
+29,DerbyCollector,submission_title,"Which La Liga stadium has the best matchday experience for foreign visitors?",inquiry
+30,VillarrealYellow,comment,"Alex Baena delivered 14 assists last season, leading the entire league.",evidenced_claim
+31,GetafeBordalas,comment,"Bordalas ball might not be pretty but it gets results every single season.",assertion_reaction
+32,BetisEnthusiast,comment,"Betis spent €0 in net transfer fee this summer and signed 4 high quality starters.",evidenced_claim
+33,BarcaFinances,comment,"Olmo was registered under emergency injury rules with 80% of Christensen's salary.",evidenced_claim
+34,SubredditUser_9,submission_title,"Can someone explain how the La Liga salary cap is calculated?",inquiry
+35,LigaNeutral,comment,"La Liga is objectively more tactical and rigorous than the Premier League.",assertion_reaction
