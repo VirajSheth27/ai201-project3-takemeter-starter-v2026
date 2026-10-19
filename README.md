@@ -110,8 +110,8 @@ He clears Bellingham statistically but no one talks about him and people won't s
 
 | Label | Count | Share |
 |---|---|---|
-|`assertion_reaction`  | 153 | 76 |
-| `evidenced_claim` | 24 | 14 |
+|`assertion_reaction`  | 140 | 70 |
+| `evidenced_claim` | 37 | 18 |
 | `inquiry` | 23 | 12 |
 | **Total** |  | 100% |
 
@@ -142,17 +142,23 @@ He clears Bellingham statistically but no one talks about him and people won't s
 
 ## The Training Run
 
-<!-- Your starting model, your settings, and anything you changed and why. -->
+**Base model:** [BASE_MODEL from section 2 of the notebook]
 
-**Base model:**
+**Settings:** 3 epochs, learning rate 2e-5, batch size 16, 128 tokens per post, seed [SEED from section 2]
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Device:** cpu
 
-**Anything I changed from the defaults, and why:**
+**Anything I changed from the defaults, and why:** Nothing. I ran the defaults.
 
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
+**Split sizes:** train 139 · val 31 · test 30
+
+| Label | Train | Val | Test |
+|---|---|---|---|
+| `assertion_reaction` | 97 | 22 | 21 |
+| `evidenced_claim` | 17 | 3 | 3 |
+| `inquiry` | 25 | 6 | 6 |
+
+`evidenced_claim` has only 3 test examples and `inquiry` only 6, both below the roughly 8 needed for stable metrics. Their scores will move a lot between seeds, and a single prediction changes `evidenced_claim`'s recall by about 33 points.
 
 
 
@@ -160,24 +166,15 @@ of next unit's variance. -->
 
 ## How I Used AI
 
-<!-- Two specific moments — what you asked, what came back, what you changed.
-
-     ⚠️ Plus disclosure of any pre-labelling. If you had a model pre-label a
-     batch and then read and corrected every one, say that. It's an allowed
-     workflow and disclosing it costs you nothing. Not disclosing it is the
-     problem. -->
-
-**Moment 1**
-
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* I gave Claude my label definitions and asked for eight posts that sit on my label boundaries, then classified them myself using only my written rules.
+- *What came back:* Eight borderline posts. Classifying them showed two contradictions in my rules: one rule said a question with a rhetorical angle was still `inquiry` and another said rhetorical questions were not, and a post whose only number was a player's age didn't fit my evidence rule cleanly.
+- *What I changed:* I made intent win over form for questions (the intent-wins rule) and added the exception that a background figure like an age doesn't count as evidence (the direct-anchor rule). None of the eight generated posts are in my dataset.
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* I pasted my five acceptance criteria and asked whether each could be checked by someone who couldn't ask me what I meant, plus one reason each target might be too easy and one it might be too hard, without suggesting new numbers.
+- *What came back:* It flagged wording that made some criteria uncheckable, such as "macro recall" for a single label, two different conditions in one criterion, and a self-agreement criterion with no cool-off period stated.
+- *What I changed:* [Describe the wording fixes you made in criteria.md. The numbers are my own.]
 
 **Pre-labelling disclosure:**
 
