@@ -51,62 +51,46 @@ whether you hit them:
 
 ---
 
-## 1.
+## 1. Overall Accuracy Baseline Standard
 
-<!-- Your criterion. It must name a number. -->
+Overall accuracy must reach at least 0.65 on the held-out test set across all three seeds.
 
+**Why this target:** A majority-class baseline that always predicts `assertion_reaction` yields an accuracy of roughly 0.40 (14/35 posts in our reading log). Setting the target at 0.65 requires the classifier to meaningfully learn distinct lexical and structural features across classes rather than defaulting to the majority class.
 
+---
 
-**Why this target:**
+## 2. Inquiry Per-Label Recall
 
+The macro recall for the `inquiry` label must be at least 0.60 on the held-out test set across all three seeds.
+
+**Why this target:** In our reading log, `inquiry` represents only ~23% of posts (8 out of 35). Because `inquiry` is a smaller minority class compared to `assertion_reaction` and `evidenced_claim`, a lower recall threshold accounts for fewer test examples while ensuring the model still reliably captures true questions and help requests without collapsing them into discussion hot takes.
 
 
 ---
 
-## 2.
+## 3. Hardest Boundary Recall (Evidenced Claim)
 
-<!-- Your criterion. -->
+The recall for `evidenced_claim` must reach at least 0.70 on the held-out test set across all three seeds, tolerating no more than 30% of true evidenced posts being misclassified as `assertion_reaction`.
 
-
-
-**Why this target:**
-
+**Why this target:** The hardest boundary in our taxonomy is distinguishing `evidenced_claim` from `assertion_reaction` when posts contain subtle numerical figures or metrics. A 0.70 recall ensures the model successfully detects explicit supporting data (e.g., pass stats, transfer fees, clean sheets) without excessively defaulting to unbacked hot takes.
 
 
 ---
 
-## 3.
+## 4. Precision Balance on Assertion Reaction
 
-<!-- Your criterion. -->
+The precision for `assertion_reaction` must be at least 0.68 on the held-out test set across all three seeds.
 
-
-
-**Why this target:**
-
+**Why this target:** Because `assertion_reaction` serves as our default fallback category (Priority 3 in the decision tree), an over-eager model might dump ambiguous queries or stat posts into this bucket. Setting a minimum precision of 0.68 ensures that posts labeled as unbacked hot takes or reactions are genuinely unevidenced and non-query statements.
 
 
 ---
 
-## 4.
+## 5. Intra-Annotator Labeling Consistency (Self-Agreement)
 
-<!-- Your criterion. -->
+The intra-annotator agreement rate (percentage of matching labels) must be at least 0.85 when re-labeling 20 cold posts after a cool-off period.
 
-
-
-**Why this target:**
-
-
-
----
-
-## 5.
-
-<!-- Your criterion. -->
-
-
-
-**Why this target:**
-
+**Why this target:** Because judgment calls around rhetorical queries and unanchored metrics (e.g., player age vs. stat direct anchors) can introduce human drift, achieving an 85% self-agreement rate proves that our strict priority rules (*Intent Wins* and *Direct Anchor*) produce repeatable and reliable annotations.
 
 
 ---
