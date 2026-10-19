@@ -39,8 +39,7 @@
 
 ## What This Does
 
-<!-- Your community, and what your classifier sorts posts into. Three or four
-     sentences. -->
+TakeMeter sorts comments and posts from r/LaLiga, the Reddit community for Spain's top football league, by what each post is doing. A post is an inquiry if it genuinely asks the community something, an evidenced_claim if it backs its claim with an explicit, checkable figure, and an assertion_reaction otherwise: opinions, hot takes, banter and reactions. The aim is to separate posts that argue from evidence from posts that just assert, without losing the questions people ask along the way.
 
 
 
@@ -101,48 +100,43 @@ He clears Bellingham statistically but no one talks about him and people won't s
 
 ## The Dataset
 
-<!-- Where you collected from, how you labelled, your counts, and three hard
-     cases. -->
+**Where the posts came from:** Public threads on r/LaLiga, read on old.reddit.com. The posts come from a match preview thread, discussion of the Negreira case, the Arda Güler red-card debate, a thread on Barcelona's start to the season, the Babylon Park and Camp Nou sponsorship story, Real Madrid's summer rebuild and Mourinho's return, a question about watching La Liga in Canada, a post-international-break "which match are you looking forward to" thread, an all-time La Liga XI thread, and a thread about Dani Olmo's future.
 
-**Where the posts came from:**
+[How you collected them: copied by hand, or saved thread pages and parsed them with a script. Mention that scripted collection from Reddit's JSON endpoints was blocked (HTTP 403), if you want to include that.]
 
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+**How I labelled them:** The first 20 rows were labelled cold, by me alone with only my written definitions, and are marked `cold` in the note column. [Say how you labelled the rest: by hand, or pre-labelled with an AI tool and then read and corrected one by one. Mark any pre-labelled rows in the note column.] Where my label conflicted with my own written rules, I corrected it to follow the rule and recorded the original label in the note.
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
+|`assertion_reaction`  | 153 | 76 |
+| `evidenced_claim` | 24 | 14 |
+| `inquiry` | 23 | 12 |
 | **Total** |  | 100% |
 
 **Three hard cases**
 
-<!-- Any post that made you pause: what it was, which two labels it could have
-     been, and what you chose. These are worth more than the easy 190. -->
-
 **1.**
-> *The post:*
+> *The post:* "He clears Bellingham statistically but no one talks about him and people won't shut up about Bellingham."
 >
-> *Could have been:*
+> *Could have been:* `evidenced_claim` or `assertion_reaction`
 >
-> *I chose, because:*
+> *I chose, because:* `assertion_reaction`. It appeals to statistics but never states one, so it fails the direct-anchor rule. I labelled it `evidenced_claim` when labelling cold and corrected it against my own rule, which tells me this is the boundary I am most likely to apply inconsistently.
 
 **2.**
-> *The post:*
+> *The post:* "Do people forget how extremely poor and embarrassing Mourinhos first stint at Real Madrid was?"
 >
-> *Could have been:*
+> *Could have been:* `inquiry` or `assertion_reaction`
 >
-> *I chose, because:*
+> *I chose, because:* `assertion_reaction`. It is phrased as a question, but the author has already given the answer ("extremely poor and embarrassing"). Under the intent-wins rule a rhetorical question skips step 1, and it contains no figure, so it falls to step 3.
 
 **3.**
-> *The post:*
+> *The post:* "They didn't reinforce that much quality wise. They didn't go all in for rodri. Broke the bank on a 19y old that still has to prove himself and the rest is hardly worth mentioning."
 >
-> *Could have been:*
+> *Could have been:* `evidenced_claim` or `assertion_reaction`
 >
-> *I chose, because:*
+> *I chose, because:* `assertion_reaction`. The only figure is the player's age, which is background rather than support for the claim that Madrid didn't add quality. The direct-anchor rule says that doesn't count as evidence.
 
 ---
 
