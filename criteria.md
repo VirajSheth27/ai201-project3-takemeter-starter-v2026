@@ -65,6 +65,16 @@ The macro recall for the `inquiry` label must be at least 0.60 on the held-out t
 
 **Why this target:** In our reading log, `inquiry` represents only ~23% of posts (8 out of 35). Because `inquiry` is a smaller minority class compared to `assertion_reaction` and `evidenced_claim`, a lower recall threshold accounts for fewer test examples while ensuring the model still reliably captures true questions and help requests without collapsing them into discussion hot takes.
 
+> **Revised in unit 6:** The recall for the `inquiry` label must be at least
+> 0.60 on the held-out test set across all three seeds.
+>
+> **Why revised:** "Macro recall" is an average over several labels, so "the
+> macro recall for the `inquiry` label" names no number I can compute — macro
+> recall over all three labels and `inquiry`'s own recall are different
+> figures, and the original could be read as either. The intent was always
+> `inquiry`'s own recall, which is what the per-label block in
+> `results_three_seeds_*.json` reports. The target (0.60) is unchanged.
+
 
 ---
 
