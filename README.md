@@ -278,6 +278,7 @@ A target has to hold on all three seeds.
 - *What the numbers show:* both minority labels score 0 on all three seeds, with no variation at all. The confusion matrix has no off-diagonal structure that points at a boundary; every row goes to `assertion_reaction`. Validation accuracy was flat at the majority rate across all 3 epochs, and training loss ended near the entropy of the label prior. With 139 training rows and batch size 16, three epochs are only 27 optimizer steps at lr 2e-5. On 70/18/12 data the cheapest way to lower the loss in 27 steps is to learn the prior.
 - *Why I don't think it's labelling:* if I had applied a boundary two different ways, the matrix would show one specific pair leaking, in one direction, with the rest learned. Here even `inquiry` fails, and it is my most surface-marked label (almost every one ends in "?"). The baseline gets 4/6 of those with bare label names. A model that had actually trained on that signal would not miss all 18. The agreement report points the same way: applied to someone else's written rules, the load-bearing-fact rule (staff rule 1, the direct counterpart of my own direct-anchor rule) was applied the same way as staff on all 30 posts, with no pile (a) cases.
 - *Caveat on that evidence:* the staff-set labels were produced with Claude's help (see How I Used AI), so the 100% is evidence that the rule is applicable, not proof that **my** 200 labels were consistent. The only direct evidence on my own consistency is hard case 1 in The Dataset: I flipped "He clears Bellingham statistically…" from `evidenced_claim` to `assertion_reaction` on review. That means my evidence boundary is not perfectly stable. It cannot explain a collapse that also hits `inquiry`, though. Criterion 5's relabel is the test that would settle it.
+- *Correction found after Milestone 5:* for criterion 3 this is only half the story. Reading the misses showed that 7+ of my 23 `evidenced_claim` labels break my own direct-anchor rule, including my own hard cases 1 and 3. See "What looking at the misses showed" under The Improvement. Criterion 3 is partly a labelling problem; criterion 2 is not.
 - *Contributing cause: too few examples.* Even once the model learns, `evidenced_claim` has only 3 test posts per seed (one post = 33 points of recall) and only 17 training examples. Its score will be noisy whatever the fix.
 
 **Criteria 1 and 4: met, but on a broken measure.** Both pass for a constant predictor. That is a finding about my criteria rather than the model. My unit 5 targets were calibrated on a 35-post reading log with a much flatter label mix than the 200 I actually collected.
@@ -309,38 +310,85 @@ None. All 30 posts matched staff, and `agreement_results.json` records 0 disagre
 
 ## The Improvement
 
-**What I changed:**
+**What I changed:** One training setting: `EPOCHS` from 3 to 10, in section 2 of the notebook. Everything else is unchanged: the same `labels.csv`, lr 2e-5, batch 16, max length 128, seeds 42 / 7 / 2024, and the same stratified splits, so the test posts are identical to the before-run. I re-ran section 6 with `RUN_LABEL = "after"`, which wrote `results_three_seeds_after.json`. Device: `cpu`, about 3.8 minutes per seed.
 
-**Which diagnosis pointed at it:**
+**Which diagnosis pointed at it:** The diagnosis for criteria 2 and 3. All three before-seeds predicted only the majority label, validation accuracy stayed at the majority rate on every epoch, and training loss ended near the prior's entropy. Three epochs on 139 rows is 27 optimizer steps, too few for the model to move off the prior. The agreement report gave no sign of an inconsistently applied boundary, so training was the first thing to fix.
 
 ### Run Log — After
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.65 | 0.767 | 0.800 | 0.767 | MET |
+| 2. Recall on `inquiry` | ≥ 0.60 | 0.500 | 0.833 | 0.500 | MISSED |
+| 3. Recall on `evidenced_claim` | ≥ 0.70 | 0.000 | 0.000 | 0.000 | MISSED |
+| 4. Precision on `assertion_reaction` | ≥ 0.68 | 0.769 | 0.826 | 0.769 | MET |
+| 5. Self-agreement, 20 cold posts re-labelled | ≥ 0.85 | n/a (not seed-dependent) | | | PENDING |
 
-**Did it help, and how do I know:**
+| Measure | Seed 42 | Seed 7 | Seed 2024 | Spread |
+|---|---|---|---|---|
+| Overall accuracy | 0.767 | 0.800 | 0.767 | 0.033 |
+| Macro F1 | 0.506 | 0.566 | 0.484 | 0.082 |
+| F1 — `assertion_reaction` | 0.851 | 0.864 | 0.851 | 0.013 |
+| F1 — `evidenced_claim` | 0.000 | 0.000 | 0.000 | 0.000 |
+| F1 — `inquiry` | 0.667 | 0.833 | 0.600 | 0.233 |
 
-<!-- If it didn't, say so. Relabelling that didn't help is a genuinely
-     interesting result and earns full credit. -->
+Confusion matrix after, seed 42 (section 7):
 
+| true \ predicted | assertion_reaction | evidenced_claim | inquiry |
+|---|---|---|---|
+| **assertion_reaction** | 20 | 1 | 0 |
+| **evidenced_claim** | 3 | 0 | 0 |
+| **inquiry** | 3 | 0 | 3 |
 
+Summed over all three seeds (90 predictions), after:
+
+| true \ predicted | assertion_reaction | evidenced_claim | inquiry |
+|---|---|---|---|
+| **assertion_reaction** | 59 | 2 | 2 |
+| **evidenced_claim** | 9 | 0 | 0 |
+| **inquiry** | 7 | 0 | 11 |
+
+**Did it help, and how do I know:** Yes for `inquiry`, no for `evidenced_claim`. Two criteria are still missed.
+
+- **The collapse is gone.** Accuracy rose from 0.700 to 0.767–0.800 on every seed, so it now beats the 0.700 majority-class rate instead of equalling it. Macro F1 roughly doubled, from 0.275 to 0.484–0.566. Criteria 1 and 4 are now met by a model that is actually discriminating, not by a constant guesser. `assertion_reaction` precision (0.769–0.826) is above its 0.700 base rate.
+- **`inquiry` went from 0 of 18 caught to 11 of 18.** Recall was 0.500 / 0.833 / 0.500, so criterion 2 is still MISSED: two seeds land at 0.50, under the 0.60 target. With 6 test inquiries per seed, one post is worth 17 points. Seed 7's 0.833 and the others' 0.500 differ by just two posts, and the spread (0.233) is the widest in the table.
+- **`evidenced_claim` did not move: 0 of 9 on every seed.** All 9 go to `assertion_reaction`. The model now predicts `evidenced_claim` occasionally (2 of 90 predictions), but only for posts that are really `assertion_reaction`. More training did not fix this label, so the training diagnosis was right for `inquiry` and incomplete for `evidenced_claim`. The section below explains why.
+- **Confidence now means something.** The most-confident third was right 0.70 / 1.00 / 0.90 of the time, against 0.70 / 0.60 / 0.70 for the least-confident third. In the before-run the two thirds were barely different, because every guess was the same guess.
+
+### What looking at the misses showed, and a correction to my Milestone 4 diagnosis
+
+After the re-run I read the `evidenced_claim` posts in the seed-42 test split. Two of the three are **hard cases 1 and 3 from my own Dataset section**: "He clears Bellingham statistically." and "…Broke the bank on a 19y old…". My README says I labelled both `assertion_reaction` under the direct-anchor rule, and that I'd recorded the original cold label in the note column. In `labels.csv` both are still `evidenced_claim`, and neither note was recorded. The model calls both `assertion_reaction`, so on these posts it applies my written rule better than my labels do.
+
+Reading all 23 `evidenced_claim` rows against that rule, at least 7 break it:
+
+| Row | Post (shortened) | Why it fails the direct-anchor rule |
+|---|---|---|
+| 2 | He clears Bellingham statistically. | Appeals to stats, states none (my own hard case 1) |
+| 11 | No direct payments to referees: A review of bank records showed no money… | No figure at all |
+| 31 | They will definitely not score over 4 goals per game… 110-115 goals | Figures are a forecast, not checkable support |
+| 48 | Yes if every Spanish league team leaves eight starters on the bench… | Sarcastic hypothetical |
+| 82 | There is no record of any park or company operating in Gaza… | No figure |
+| 98 | …Broke the bank on a 19y old that still has to prove himself… | The age is background (my own hard case 3) |
+| 183 | At his peak… €80m would be totally fair price for Olmo… | The figure *is* the opinion, not support for it |
+
+Rows 10 ("50000 page dossier… God knows what's in that") and 28 ("Suarez easily 40 league goals") are borderline: the number decorates the claim rather than carrying it, which is what staff rule 1 calls a `hot_take`.
+
+That is roughly 7–9 of 23 `evidenced_claim` labels, 30–40%, that my own rule says should be `assertion_reaction`. In the "too few examples" problem, the 17 training examples are both few and inconsistent. So my M4 statement that "the evidence boundary is not a labelling problem" holds for the collapse, which also hit `inquiry`, but **not** for criterion 3. The agreement report could not catch this. On the staff set I applied the load-bearing-fact rule cleanly, but I never re-checked my own 200 against my own rule, and the staff-set labels were AI-assisted, so 100% there said nothing about these rows. I'm reporting this rather than relabelling now, because Milestone 5 allows one change and I'd already made it.
 
 ---
 
 ## What's Still Broken
 
-<!-- For each criterion still missed: what you'd do, and why you stopped. -->
+- **Criterion 3 — `evidenced_claim` recall ≥ 0.70: still 0.000 on all seeds.**
+  - *What I'd do:* relabel only the evidenced/assertion boundary. Re-read the 23 `evidenced_claim` rows (and the 15 `assertion_reaction` rows that contain a digit) against the direct-anchor rule, flip the 7 listed above plus any borderline cases I decide against, record the original label in `note`, and re-run section 6 with a new `RUN_LABEL`. Relabelling shrinks the label further (to about 15 rows), so I'd also collect about 30 more real stat-backed posts to get it above 20 training examples. With 3 test posts per seed, one post moves recall by 33 points, so even a correct fix will look noisy until the label is bigger.
+  - *Why I stopped:* Milestone 5 allows one change. The relabel is the obvious second change, and doing it in the same run would have made the two impossible to tell apart.
+- **Criterion 2 — `inquiry` recall ≥ 0.60: 0.500 / 0.833 / 0.500.**
+  - *What I'd do:* first check whether the missed inquiries are the questions my intent-wins rule makes hardest (questions with an opinion attached). That is a boundary to re-check, like criterion 3. More inquiry examples would also lower the 17-points-per-post noise on 6 test posts.
+  - *Why I stopped:* the same one-change rule, and the gap is 1 post per seed on two of the seeds, inside the noise of a 6-post test set.
+- **Criterion 5 — self-agreement: not yet measured.** The blind relabel file is ready. It needs a cool-off and my own time, which this session didn't have. <!-- TODO(Viraj): update once score_self_agreement.py is run. -->
+- **Criteria 1 and 4 are met, but their targets were set below the majority-class rate (0.700).** If I wrote them again, both would be measured against the majority-class baseline rather than as bare numbers. I haven't changed them, because that is a revision after seeing results.
 
-
-
-**The gap between what I meant my labels to capture and what the model
-learned:**
-<!-- Two sentences. Your confusion matrix is the evidence. -->
+**The gap between what I meant my labels to capture and what the model learned:** I meant `evidenced_claim` to mean "a claim carried by a figure", but the model learned that almost nothing is `evidenced_claim`: all 9 true ones go to `assertion_reaction` across three seeds, and its only 2 `evidenced_claim` guesses were wrong. What it did learn, after 10 epochs, is the surface shape of a question (11 of 18 inquiries). On the evidence boundary it had no consistent target to learn, because my own labels put "He clears Bellingham statistically" on the evidence side while my written rule puts it on the other.
 
 
 
